@@ -15,10 +15,18 @@ class VilleDetail(generics.RetrieveDestroyAPIView):
 	serializer_class = VilleSerializer
 
 class EcheanceList(generics.ListCreateAPIView):
-	def get_queryset(self):
-		queryset = Echeance.objects.filter(Echeance_id=self.kwargs["pk"])
-		return queryset
+	queryset = Echeance.objects.all()
+	serializer_class = EcheanceSerializer
+
+class EcheanceDetail(generics.RetrieveDestroyAPIView):
+	queryset = Echeance.objects.all()
 	serializer_class = EcheanceSerializer
 
 class CreateEcheance(generics.CreateAPIView):
 	serializer_class = EcheanceSerializer
+
+# class EcheanceList(generics.ListCreateAPIView):
+# 	def get_queryset(self):
+# 		queryset = Echeance.objects.filter(Echeance_id=self.kwargs["pk"])
+# 		return queryset
+# 	serializer_class = EcheanceSerializer
