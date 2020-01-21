@@ -6,7 +6,6 @@ class EcheanceSerializer(serializers.ModelSerializer):
 		fields = '__all__'
 
 class VilleSerializer(serializers.ModelSerializer):
-	villes = EcheanceSerializer(many=True, read_only=True, required=False)
 	class Meta:
 		model = Ville
 		fields = '__all__'

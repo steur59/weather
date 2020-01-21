@@ -19,6 +19,11 @@ class EcheanceList(generics.ListCreateAPIView):
 	serializer_class = EcheanceSerializer
 
 class EcheanceDetail(generics.RetrieveDestroyAPIView):
+	print("coucou")
+	queryset = Echeance.objects.all()
+	serializer_class = EcheanceSerializer
+
+class EcheanceByVille(generics.ListCreateAPIView):
 	queryset = Echeance.objects.all()
 	serializer_class = EcheanceSerializer
 
